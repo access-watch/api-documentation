@@ -1,16 +1,19 @@
 ---
 title: API Reference
 
-language_tabs:
-  - shell
-  - ruby
-  - python
-
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - address_information
+  - user_agent_information
+  - headers_information
+  - basic_combined_information
+  - detailed_combined_information
+  - basic_request_screening
+  - detailed_request_screening
+  - detailed_request_logging
   - errors
 
 search: true
@@ -18,151 +21,194 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Access Watch API!
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Our API is primarily about analysing web traffic:
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+* in one way you use it to log HTTP requests
+* in the other you get back augmented logs and statistics
+
+You can also use our API to get information about IP Addresses and User Agents.
 
 # Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl "https://access.watch/api/v1/hello" \
+  -H "Api-Key: 7911c8baebd1754134647625ae36f63e"
+
+curl "https://access.watch/api/v1/hello?api_key=7911c8baebd1754134647625ae36f63e"
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+Access Watch use API keys to authorize accesses to our API.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+You can get an API key directly on our [home page](https://access.watch/).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+The API key is expected to be passed in each request with the `Api-Key` HTTP Header:
 
-`Authorization: meowmeowmeow`
+`Api-Key: <API_KEY>`
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+We also support the `api_key` parameter in the URL:
 
-# Kittens
+`GET https://access.watch/api/v1/hello?api_key=<API_KEY>`
 
-## Get All Kittens
+# Objects
 
-```ruby
-require 'kittn'
+## Address object
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
+> Sample address object
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "id": "e90d9f20cce9c203f439129b0943a8bb",
+  "value": "92.78.176.182",
+  "hostname": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
+  "as": "3209",
+  "network": "ARCOR-DSL-NET17",
+  "country": "DE",
+  "reputation": "ok",
+  "flags": [
+    "broadband",
+  ]
 }
 ```
 
-This endpoint retrieves a specific kitten.
+### Properties of an Address object
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+Parameter  | Type   | Description
+---------- | ------ | --------------------------------------------------------
+id         | string | internal identifier
+value      | string | the ipv4 or ipv6 address
+hostname   | string | the reverse hostname for the address
+as         | int    | the autonomous system number
+network    | string | the network name
+country    | string | the country code, two letter (ISO 3166-1 alpha-2)
+reputation | string | nice, ok, suspicious or bad
+flags      | array  | see flags section
 
-### HTTP Request
+### Flags for an Address object
 
-`GET http://example.com/kittens/<ID>`
+Flag            | Description
+--------------- | --------------------------------------------------------
+broadband       | IP from a broadband connection (cable, dsl)
+mobile          | IP from a mobile connection (GSM, GPRS, 3G, LTS)
+server          | IP from a server in a data center
+business        | IP from a business broadband connection
+corporate       | IP from the network of a big corporation
+institution     | IP from a public institution (federal, national, local)
+education       | IP from an education institution (university, school)
+wifi            | IP from a commercial Wifi provider
+wimax           | IP from a commercial Wimax provider
+sat             | IP from a satellite provider
+vpn             | IP from a VPN provider
+proxy           | IP from a commercial proxy (like Opera Mini or Google)
+cloud           | IP from a cloud server like AWS or Google Cloud
+tor             | IP used a a Tor exit
+crawler         | IP from a known crawler
+robot           | IP used by robot agent
+suspicious_scan | IP used to scan websites for known software and security holes
+comment_spam    | IP used to post comment spam
+brute_force     | IP used for brute force attacks (eg: against login forms)
+referer_spam    | IP used for referer spam
 
-### URL Parameters
+## User Agent object
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+> Sample User Agent object
 
+```json
+{
+  "id": "a46c391e4a75e4a3734042b6077e8cfc",
+  "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36",
+  "type": "browser",
+  "agent": {
+    "name": "chrome",
+    "icon": "chrome",
+    "version": "49.0.2623.87",
+    "label": "Chrome 49"
+  },
+  "system": {
+    "name": "macosx",
+    "icon": "macosx",
+    "version": "10.11.3",
+    "label": "OS X 10.11"
+  }
+}
+```
+
+### Properties of an User Agent object
+
+Parameter  | Type   | Description
+---------- | ------ | --------------------------------------------------------
+id         | string | internal identifier
+value      | string | the text value
+type       | string | browser or robot
+agent      | object | with name, icon, version and label as properties
+system     | object | with name, icon, version and label as properties
+
+## Request object
+
+> Sample detailed Request object:
+
+```json
+{
+  "protocol": "HTTP/1.1",
+  "method": "GET",
+  "scheme": "http",
+  "host": "francois.hodierne.net",
+  "port": "80",
+  "url": "/resume",
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.8",
+    "Accept-Encoding": "gzip, deflate, sdch",
+    "Connection": "keep-alive"
+  }
+}
+```
+
+> Sample basic Request object:
+
+```json
+{
+  "protocol": "HTTP/1.1",
+  "method": "GET",
+  "scheme": "http",
+  "host": "francois.hodierne.net",
+  "port": "80",
+  "url": "/resume",
+  "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36"
+}
+```
+
+There is two type of request object:
+
+ * detailed: with all HTTP headers
+ * simple: with just the User Agent
+
+You should always use the detailed request object unless the HTTP headers are not available.
+
+### Properties of a detailed request object
+
+Parameter  | Type   | Required | Description
+---------- | ------ | -------- | --------------------------------------------------------
+protocol   | string |    no    | HTTP/1.0, HTTP/1.1 or HTTP/2. Default to null.
+method     | string |    yes   | the HTTP Method: HEAD, GET, POST, ...
+scheme     | string |    yes   | http or https
+host       | string |    yes   | the host for the request
+port       | int    |    no    | default to 80/443 (http/https)
+url        | string |    yes   | The relative URL (path + query string)
+headers    | object |    yes   | All HTTP headers as key value pair
+
+### Properties of a basic request object
+
+Parameter  | Type   | Required | Description
+---------- | ------ |----------|---------------------------------------------------------
+protocol   | string |    no    | HTTP/1.0, HTTP/1.1 or HTTP/2. Default to null.
+method     | string |    yes   | the HTTP Method: HEAD, GET, POST, ...
+scheme     | string |    yes   | http or https
+host       | string |    yes   | the host for the request
+port       | int    |    no    | default to 80/443 (http/https)
+url        | string |    yes   | The relative URL (path + query string)
+user-agent | string |    yes   | The User Agent used for the request
+
+# Endpoints
