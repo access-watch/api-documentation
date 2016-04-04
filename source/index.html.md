@@ -2,7 +2,7 @@
 title: API Reference
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://access.watch/'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -37,7 +37,7 @@ curl "https://access.watch/api/1.0/hello" \
 curl "https://access.watch/api/1.0/hello?api_key=7911c8baebd1754134647625ae36f63e"
 ```
 
-Access Watch use API keys to authorize accesses to our API.
+Access Watch use API keys to authorize access to our API.
 
 You can get an API key directly on our [home page](https://access.watch/).
 
@@ -164,7 +164,7 @@ country    | string | a country code, parsed from the Accept-Language header
 ```json
 {
   "id": "7ecc3a36d6eae49e535f7a956778a166",
-  "type": "browser",
+  "type": "browser"
 }
 ```
 
