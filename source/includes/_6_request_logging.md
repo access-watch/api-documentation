@@ -1,7 +1,7 @@
-## Detailed Request logging
+## Request logging
 
 ```shell
-curl "https://access.watch/api/v1/log" \
+curl "https://access.watch/api/1.0/log" \
   -H "Api-Key: 7911c8baebd1754134647625ae36f63e" \
   -H "Content-Type: application/json" \
   -d '{
@@ -71,7 +71,7 @@ curl "https://access.watch/api/v1/log" \
 }
 ```
 
-This endpoint is used to log an HTTP request.
+This endpoint is used to log and index an HTTP request.
 
 ### API Request
 
