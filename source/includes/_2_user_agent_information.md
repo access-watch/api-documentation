@@ -1,33 +1,22 @@
 ## User Agent
 
-This endpoint is used to get metadata about an User Agent string.
+```http
+POST /api/1.0/user-agent HTTP/1.1
+Host: access.watch
+Api-Key: <Api_Key>
+Accept: application/json
 
-### API Request
+{
+  "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36"
+}
+```
 
 ```shell
-curl "https://access.watch/api/1.0/user-agent" \
-  -H "Api-Key: 7911c8baebd1754134647625ae36f63e" \
-  -d "value=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36"
-
 curl "https://access.watch/api/1.0/user-agent" \
   -H "Api-Key: 7911c8baebd1754134647625ae36f63e" \
   -H "Content-Type: application/json" \
   -d '{"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36"}'
 ```
-
-`POST https://access.watch/api/1.0/user-agent`
-
-Two different Content-Type are supported:
-
- * default is "application/x-www-form-urlencoded":
-
-`value=<USER-AGENT>`
-
- * also available is "application/json":
-
-`{"value": "<USER-AGENT>"}`
-
-### API Response
 
 > JSON Response example:
 
@@ -50,6 +39,24 @@ Two different Content-Type are supported:
   }
 }
 ```
+
+This endpoint is used to get metadata about a User Agent string.
+
+### API Request
+
+`POST https://access.watch/api/1.0/user-agent`
+
+This endpoint accept a JSON object as input.
+
+The expected Content-Type is “application/json”.
+
+### JSON Input Properties
+
+Parameter  | Type   | Required | Description
+---------- | ------ | -------- | -----------
+value      | string |   yes    | the user agent string
+
+### API Response
 
 Return a User Agent object, see the example on the side.
 

@@ -4,6 +4,13 @@ This endpoint is used to get metadata and reputation of an IP Address.
 
 ### API Request
 
+```http
+GET /api/1.0/address/92.78.176.182 HTTP/1.1
+Host: access.watch
+Api-Key: <Api_Key>
+Accept: application/json
+```
+
 ```shell
 curl "https://access.watch/api/1.0/address/92.78.176.182" \
   -H "Api-Key: 7911c8baebd1754134647625ae36f63e"

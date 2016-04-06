@@ -1,10 +1,26 @@
 ## Headers Signature
 
-This endpoint is used to get information about an agent, by parsing the HTTP Headers.
+> Request with raw headers:
 
-Informations about the agent are extracted and you get back an identifier, user agent, mime type and language.
+```http
+POST /api/1.0/signature HTTP/1.1
+Host: access.watch
+Api-Key: <Api_Key>
+Accept: application/json
 
-### API Request
+{
+  "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+  "Accept-Encoding": "gzip, deflate, sdch",
+  "Accept-Language": "en-US,en;q=0.8",
+  "Cache-Control": "max-age=0",
+  "Connection": "keep-alive",
+  "DNT": "1",
+  "Host": "francois.hodierne.net",
+  "Referer": "https://www.google.com/",
+  "Upgrade-Insecure-Requests": "1",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36"
+}
+```
 
 ```shell
 curl "https://access.watch/api/1.0/signature" \
@@ -24,10 +40,11 @@ curl "https://access.watch/api/1.0/signature" \
 }'
 ```
 
-```shell
-curl "https://access.watch/api/1.0/signature/e487849551a056762249e1d266bef465" \
-  -H "Api-Key: 7911c8baebd1754134647625ae36f63e"
-```
+This endpoint is used to get information about an agent, by parsing the HTTP Headers.
+
+Informations about the agent are extracted and you get back an identifier, user agent, mime type and language.
+
+### API Request
 
 ### With raw headers
 
@@ -39,24 +56,21 @@ Keys are not case sensitive, so it's ok if they are submitted all lowercase or u
 
 We recommand to remove sensitive data like Cookie or Authorization headers.
 
-> JSON Input example:
+### With an identifier
 
-```json
-{
-  "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-  "Accept-Encoding": "gzip, deflate, sdch",
-  "Accept-Language": "en-US,en;q=0.8",
-  "Cache-Control": "max-age=0",
-  "Connection": "keep-alive",
-  "DNT": "1",
-  "Host": "francois.hodierne.net",
-  "Referer": "https://www.google.com/",
-  "Upgrade-Insecure-Requests": "1",
-  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36"
-}
+> Request with an identifier:
+
+```http
+GET /api/1.0/signature/e487849551a056762249e1d266bef465 HTTP/1.1
+Host: access.watch
+Api-Key: <Api_Key>
+Accept: application/json
 ```
 
-### With an identifier
+```shell
+curl "https://access.watch/api/1.0/signature/e487849551a056762249e1d266bef465" \
+  -H "Api-Key: 7911c8baebd1754134647625ae36f63e"
+```
 
 If you already have an identifier, you can simply construct a URL like that.
 
@@ -116,6 +130,7 @@ If you already have an identifier, you can simply construct a URL like that.
 ```
 
 Return an [Address object](#ip-address-object) with extra properties:
+
  * a [Address object](#address-object)
  * a [Signature object](#headers-signature-object) (if headers were passed)
  * a [User Agent object](#user-agent-object) (if any)
