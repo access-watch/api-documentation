@@ -5,6 +5,7 @@ POST /api/1.0/log HTTP/1.1
 Host: access.watch
 Api-Key: <Api_Key>
 Accept: application/json
+Content-Type: application/json
 
 {
   "time": " 2016-04-05T17:49:14.800Z",
@@ -37,7 +38,7 @@ Accept: application/json
 
 ```shell
 curl "https://access.watch/api/1.0/log" \
-  -H "Api-Key: 7911c8baebd1754134647625ae36f63e" \
+  -H "Api-Key: <Api_Key>" \
   -H "Content-Type: application/json" \
   -d '{
   "address": "92.78.176.182",

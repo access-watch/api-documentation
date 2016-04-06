@@ -13,12 +13,7 @@ Accept: application/json
 
 ```shell
 curl "https://access.watch/api/1.0/address/92.78.176.182" \
-  -H "Api-Key: 7911c8baebd1754134647625ae36f63e"
-```
-
-```shell
-curl "https://access.watch/api/1.0/address/91.200.12.5" \
-  -H "Api-Key: 7911c8baebd1754134647625ae36f63e"
+  -H "Api-Key: <Api_Key>"
 ```
 
 `GET https://access.watch/api/1.0/address/<ADDRESS>`

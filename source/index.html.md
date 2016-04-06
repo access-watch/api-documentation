@@ -44,7 +44,7 @@ Accept: application/json
 
 ```shell
 curl "https://access.watch/api/1.0/hello" \
-  -H "Api-Key: 7911c8baebd1754134647625ae36f63e"
+  -H "Api-Key: <Api_Key>"
 ```
 
 Access Watch use API keys to authorize access to our API.

@@ -7,6 +7,7 @@ POST /api/1.0/signature HTTP/1.1
 Host: access.watch
 Api-Key: <Api_Key>
 Accept: application/json
+Content-Type: application/json
 
 {
   "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
@@ -24,7 +25,7 @@ Accept: application/json
 
 ```shell
 curl "https://access.watch/api/1.0/signature" \
-  -H "Api-Key: 7911c8baebd1754134647625ae36f63e" \
+  -H "Api-Key: <Api_Key>" \
   -H "Content-Type: application/json" \
   -d '{
   "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
@@ -46,8 +47,6 @@ Informations about the agent are extracted and you get back an identifier, user 
 
 ### API Request
 
-### With raw headers
-
 `POST https://access.watch/api/1.0/signature`
 
 The expected Content-Type is "application/json".
@@ -55,26 +54,6 @@ The expected Content-Type is "application/json".
 Keys are not case sensitive, so it's ok if they are submitted all lowercase or uppercase.
 
 We recommand to remove sensitive data like Cookie or Authorization headers.
-
-### With an identifier
-
-> Request with an identifier:
-
-```http
-GET /api/1.0/signature/e487849551a056762249e1d266bef465 HTTP/1.1
-Host: access.watch
-Api-Key: <Api_Key>
-Accept: application/json
-```
-
-```shell
-curl "https://access.watch/api/1.0/signature/e487849551a056762249e1d266bef465" \
-  -H "Api-Key: 7911c8baebd1754134647625ae36f63e"
-```
-
-If you already have an identifier, you can simply construct a URL like that.
-
-`GET https://access.watch/api/1.0/signature/<ID>`
 
 ### API Response
 

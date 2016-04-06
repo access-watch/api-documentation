@@ -5,6 +5,7 @@ POST /api/1.0/user-agent HTTP/1.1
 Host: access.watch
 Api-Key: <Api_Key>
 Accept: application/json
+Content-Type: application/json
 
 {
   "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36"
@@ -13,7 +14,7 @@ Accept: application/json
 
 ```shell
 curl "https://access.watch/api/1.0/user-agent" \
-  -H "Api-Key: 7911c8baebd1754134647625ae36f63e" \
+  -H "Api-Key: <Api_Key>" \
   -H "Content-Type: application/json" \
   -d '{"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36"}'
 ```
