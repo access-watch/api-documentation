@@ -62,17 +62,21 @@ We recommand to remove sensitive data like Cookie or Authorization headers.
 ```json
 {
   "id": "7ecc3a36d6eae49e535f7a956778a166",
-  "language": "en",
-  "country": "us",
+  "language_code": "en",
+  "country_code": "US",
   "user_agent": {
     "id": "b516786e573a426eb842ec2132ed35e2",
     "type": "browser",
-    "agent_name": "chrome",
-    "agent_icon": "chrome",
-    "agent_label": "Chrome 49.0.2623.87",
-    "system_name": "macosx",
-    "system_icon": "macosx",
-    "system_label": "MacOS X 10.11.3"
+    "agent": {
+      "name": "chrome",
+      "icon": "chrome",
+      "label": "Chrome 49.0.2623.87"
+    },
+    "system": {
+      "name": "macosx",
+      "icon": "macosx",
+      "label": "MacOS X 10.11.3"
+    }
   },
   "reputation": {
     "threats": [],
@@ -86,17 +90,21 @@ We recommand to remove sensitive data like Cookie or Authorization headers.
 ```json
 {
   "id": "e487849551a056762249e1d266bef465",
-  "language": "en",
-  "country": "us",
+  "language_code": "en",
+  "country_code": "US",
   "user_agent": {
     "id": "aee5c2d9c2fc59e1b95d344382a89a31",
     "type": "browser",
-    "agent_name": "firefox",
-    "agent_icon": "firefox",
-    "agent_label": "Firefox 34.0",
-    "system_name": "windows7",
-    "system_icon": "windows7",
-    "system_label": "Windows 7"
+    "agent": {
+      "name": "firefox",
+      "icon": "firefox",
+      "label": "Firefox 34.0"
+    },
+    "system": {
+      "name": "windows7",
+      "icon": "windows7",
+      "label": "Windows 7"
+    }
   },
   "reputation": {
     "threats": [
@@ -110,18 +118,18 @@ We recommand to remove sensitive data like Cookie or Authorization headers.
 
 Return an [Address object](#ip-address-object) with extra properties:
 
- * a [Address object](#address-object)
+ * a [Address object](#ip-address-object)
  * a [Signature object](#headers-signature-object) (if headers were passed)
  * a [User Agent object](#user-agent-object) (if any)
 
 ### Properties of the JSON response object
 
-Property   | Type    | Description
----------- | ------- | -----------
-id         | string  | internal identifier
-language   | string  | a language code, extract from the Accept-Language header
-country    | string  | a country code, extract from the Accept-Language header
-user_agent | object  | a [User Agent object](#user-agent-object), parsed from the User-Agent header
-reputation | array   | a [Reputation object](#reputation-object)
+Property      | Type    | Description
+------------- | ------- | -----------
+id            | string  | internal identifier
+language_code | string  | a language code, extract from the Accept-Language header
+country_code  | string  | a country code, extract from the Accept-Language header
+user_agent    | object  | a [User Agent object](#user-agent-object), parsed from the User-Agent header
+reputation    | array   | a [Reputation object](#reputation-object)
 
 Check the examples on the side.

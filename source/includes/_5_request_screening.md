@@ -88,12 +88,16 @@ curl "https://access.watch/api/1.0/request" \
   "user_agent": {
     "id": "b516786e573a426eb842ec2132ed35e2",
     "type": "browser",
-    "agent_name": "chrome",
-    "agent_icon": "chrome",
-    "agent_label": "Chrome 49.0.2623.87",
-    "system_name": "macosx",
-    "system_icon": "macosx",
-    "system_label": "MacOS X 10.11.3"
+    "agent": {
+      "name": "chrome",
+      "icon": "chrome",
+      "label": "Chrome 49.0.2623.87",
+    },
+    "system": {
+      "name": "macosx",
+      "icon": "macosx",
+      "label": "MacOS X 10.11.3",
+    }
   },
   "reputation": {
     "threats": [],

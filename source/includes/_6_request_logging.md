@@ -8,7 +8,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "time": " 2016-04-05T17:49:14.800Z",
+  "time": "2016-04-05T17:49:14.800Z",
   "address": "92.78.176.182",
   "request": {
     "protocol": "HTTP/1.1",
@@ -88,7 +88,7 @@ This endpoint accept a JSON object as input.
 
 Parameter | Type   | Description
 --------- | ------ |-----------
-time      | string | Date & Time in ISO8601 format
+time      | string | Date & Time in [ISO8601 format](https://en.wikipedia.org/wiki/ISO_8601)
 address   | string | A valid Ipv4 or Ipv6 address
 request   | object | A [Request object](#request-object)
 response  | object | A [Response object](#response-object)

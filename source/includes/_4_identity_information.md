@@ -54,6 +54,7 @@ POST /api/1.0/identity HTTP/1.1
 Host: access.watch
 Api-Key: <Api_Key>
 Accept: application/json
+Content-Type: application/json
 
 {
   "address": "92.78.176.182",
