@@ -16,7 +16,8 @@ includes:
   - 4_identity_information
   - 5_request_screening
   - 6_request_logging
-  - 7_objects
+  - 7_retrieve_logs
+  - B_01_objects
   - errors
 
 search: true
