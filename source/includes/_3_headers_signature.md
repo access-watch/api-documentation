@@ -129,7 +129,7 @@ Property      | Type    | Description
 id            | string  | internal identifier
 language_code | string  | a language code, extract from the Accept-Language header
 country_code  | string  | a country code, extract from the Accept-Language header
-user_agent    | object  | a [User Agent object](#user-agent-object), parsed from the User-Agent header
-reputation    | array   | a [Reputation object](#reputation-object)
+user_agent    | object  | an [User Agent object](#user-agent-object), parsed from the User-Agent header
+reputation    | object  | a [Reputation object](#reputation-object)
 
 Check the examples on the side.

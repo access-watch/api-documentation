@@ -82,4 +82,4 @@ as_number    | string | the autonomous system number
 network_name | string | the network name
 country_code | string | the country code, two letter (ISO 3166-1 alpha-2)
 flags        | array  | see flags in the [the Address object section](#ip-address-object)
-reputation   | array  | a [Reputation object](#reputation-object)
+reputation   | object | a [Reputation object](#reputation-object)

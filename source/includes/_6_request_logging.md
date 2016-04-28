@@ -89,9 +89,9 @@ This endpoint accept a JSON object as input.
 Parameter | Type   | Description
 --------- | ------ |-----------
 time      | string | Date & Time in [ISO8601 format](https://en.wikipedia.org/wiki/ISO_8601)
-address   | string | A valid Ipv4 or Ipv6 address
-request   | object | A [Request object](#request-object)
-response  | object | A [Response object](#response-object)
+address   | string | a valid Ipv4 or Ipv6 address
+request   | object | a [Request object](#request-object)
+response  | object | a [Response object](#response-object)
 
 ### API Response
 

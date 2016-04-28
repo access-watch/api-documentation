@@ -159,7 +159,7 @@ scheme     | string |   yes    | http or https
 host       | string |   yes    | the host for the request
 port       | int    |   no     | default to 80/443 (http/https)
 url        | string |   yes    | The relative URL (path + query string)
-user_agent | string |   yes *  | a User Agent
+user_agent | string |   yes *  | a User Agent string
 headers    | object |   yes *  | a collection of HTTP headers
 
 Only one of `headers` or `user-agent` is required. `headers` should always be favored over `user_agent`, unless HTTP headers are not available.

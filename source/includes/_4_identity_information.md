@@ -91,18 +91,22 @@ curl "https://access.watch/api/1.0/identity" \
   },
   "signature": {
     "id": "7ecc3a36d6eae49e535f7a956778a166",
-    "language": "en",
-    "country": "us"
+    "language_code": "en",
+    "country_code": "US"
   },
   "user_agent": {
     "id": "b516786e573a426eb842ec2132ed35e2",
     "type": "browser",
-    "agent_name": "chrome",
-    "agent_icon": "chrome",
-    "agent_label": "Chrome 49.0.2623.87",
-    "system_name": "macosx",
-    "system_icon": "macosx",
-    "system_label": "MacOS X 10.11.3"
+    "agent": {
+      "name": "chrome",
+      "icon": "chrome",
+      "label": "Chrome 49.0.2623.87"
+    },
+    "system": {
+      "name": "macosx",
+      "icon": "macosx",
+      "label": "MacOS X 10.11.3"
+    }
   },
   "reputation": {
     "threats": [],
@@ -149,7 +153,7 @@ Property   | Type    | Description
 ---------- | ------- | -----------
 id         | string  | internal identifier
 type       | string  | robot or browser, as detected by our platform
-address    | object  | [Address object](#ip-address-object)
-signature  | object  | [Signature object](#headers-signature-object)
-user_agent | object  | [User Agent object](#user-agent-object)
-reputation | object  | [Reputation object](#reputation-object)
+address    | object  | an [Address object](#ip-address-object)
+signature  | object  | a [Signature object](#headers-signature-object)
+user_agent | object  | an [User Agent object](#user-agent-object)
+reputation | object  | a [Reputation object](#reputation-object)

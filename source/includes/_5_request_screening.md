@@ -139,8 +139,8 @@ Return a collection of several objects:
 
 Property   | Type    | Description
 ---------- | ------- | -----------
-identity   | object  | [Identity object](#identity-combination-object)
-address    | object  | [Address object](#ip-address-object)
-signature  | object  | [Signature object](#headers-signature-object)
-user_agent | object  | [User Agent object](#user-agent-object)
-reputation | object  | [Reputation object](#reputation-object)
+identity   | object  | an [Identity object](#identity-combination-object)
+address    | object  | an [Address object](#ip-address-object)
+signature  | object  | a [Signature object](#headers-signature-object)
+user_agent | object  | an [User Agent object](#user-agent-object)
+reputation | object  | a [Reputation object](#reputation-object)
