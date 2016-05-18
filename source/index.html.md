@@ -17,6 +17,7 @@ includes:
   - 5_request_screening
   - 6_request_logging
   - 7_retrieve_logs
+  - 7_retrieving_sessions
   - B_01_objects
   - errors
 

@@ -1,14 +1,14 @@
-## Retrieving Logs
+## Retrieving Sessions
 
 ```http
-POST /api/1.0/logs?limit=1 HTTP/1.1
+POST /api/1.0/sessions?limit=1 HTTP/1.1
 Host: access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 ```
 
 ```shell
-curl "https://access.watch/api/1.0/logs?limit=1" \
+curl "https://access.watch/api/1.0/sessions?limit=1" \
   -H "Api-Key: <Api_Key>"
 ```
 
@@ -16,31 +16,10 @@ curl "https://access.watch/api/1.0/logs?limit=1" \
 
 ```json
 {
-  "logs": [
+  "sessions": [
     {
-      "request": {
-        "protocol": "HTTP\/1.1",
-        "method": "GET",
-        "scheme": "http",
-        "host": "francois.hodierne.net",
-        "port": "80",
-        "url": "\/resume",
-        "headers": {
-          "accept": "text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,*\/*;q=0.8",
-          "accept-encoding": "gzip, deflate, sdch",
-          "accept-language": "en-US,en;q=0.8",
-          "cache-control": "max-age=0",
-          "connection": "keep-alive",
-          "dnt": "1",
-          "host": "francois.hodierne.net",
-          "referer": "https:\/\/www.google.com\/",
-          "upgrade-insecure-requests": "1",
-          "user-agent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/49.0.2623.87 Safari\/537.36"
-        }
-      },
-      "response": {
-        "status": 200
-      },
+      "id": "8efe0f2ac4767f4e1131f4d6a5186767",
+      "count": 137,
       "identity": {
         "id": "1244499271eaddd36768ee157403ebe2",
         "type": "browser"
@@ -66,6 +45,7 @@ curl "https://access.watch/api/1.0/logs?limit=1" \
         "type": "browser",
         "agent": {
           "name": "chrome",
+          "version": "49.0.2623.87",
           "icon": "chrome",
           "label": "Chrome 49.0.2623.87"
         },
@@ -84,17 +64,16 @@ curl "https://access.watch/api/1.0/logs?limit=1" \
 }
 ```
 
-This endpoint is used to retrieve logs.
+This endpoint is used to retrieve sessions.
 
 ### API Request
 
-`GET https://access.watch/api/1.0/logs`
+`GET https://access.watch/api/1.0/sessions`
 
 ### URL Parameters
 
 Parameter | Type   | Description
 --------- | ------ |-----------
-q         | string | full text search
 limit     | int    | the maximum number of entries in the response
 
 ### API Response
@@ -102,5 +81,17 @@ limit     | int    | the maximum number of entries in the response
 ### Properties of the JSON response object
 
 Parameter  | Type   | Description
----------- | ------ | --------------------------------------------------------
-logs       | array  | an array of [Log objects](#log-object)
+---------- | ------ | --------------------------------------------------------------------
+sessions   | array  | a collection of [Session objects](#session-object) with extra properties
+
+### Properties of the JSON objects in the collection
+
+Parameter  | Type   | Required | Description
+---------- | ------ | -------- | ---------------------------------------------
+id         | string |     y    | a session identifier
+count      | int    |     y    | number of requests
+identity   | object |     y    | an [Identity Combination object](#identity-combination-object)
+address    | object |     y    | an [IP Address object](#ip-address-object)
+signature  | object |     n    | a [Signature object](#headers-signature-object)
+user_agent | object |     n    | a [User Agent object](#user-agent-object)
+reputation | object |     y    | a [Reputation object](#reputation-object)

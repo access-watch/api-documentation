@@ -142,9 +142,9 @@ Only one of `headers` or `user-agent` is required. You should always favor passi
 
 Return an [Identity object](#identity-combination-object) with extra properties:
 
- * a [Address object](#ip-address-object)
+ * an [Address object](#ip-address-object)
  * a [Signature object](#headers-signature-object) (if headers were passed)
- * a [User Agent object](#user-agent-object)
+ * an [User Agent object](#user-agent-object)
  * a [Reputation object](#reputation-object)
 
 ### Properties of the JSON response object
@@ -154,6 +154,6 @@ Property   | Type    | Description
 id         | string  | internal identifier
 type       | string  | robot or browser, as detected by our platform
 address    | object  | an [Address object](#ip-address-object)
-signature  | object  | a [Signature object](#headers-signature-object)
+signature  | object  | a [Signature object](#headers-signature-object) (if headers were passed)
 user_agent | object  | an [User Agent object](#user-agent-object)
 reputation | object  | a [Reputation object](#reputation-object)
