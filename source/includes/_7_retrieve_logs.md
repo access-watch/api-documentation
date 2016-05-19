@@ -95,7 +95,10 @@ This endpoint is used to retrieve logs.
 Parameter | Type   | Description
 --------- | ------ |-----------
 q         | string | full text search
-limit     | int    | the maximum number of entries in the response
+limit     | int    | the maximum number of logs in the response
+after     | string | all logs after the Date & Time in [ISO8601 format](https://en.wikipedia.org/wiki/ISO_8601)
+before    | string | all logs before the Date & Time in [ISO8601 format](https://en.wikipedia.org/wiki/ISO_8601)
+session   | string | filter logs by session id
 
 ### API Response
 
