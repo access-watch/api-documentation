@@ -91,12 +91,12 @@ curl "https://access.watch/api/1.0/request" \
     "agent": {
       "name": "chrome",
       "icon": "chrome",
-      "label": "Chrome 49.0.2623.87",
+      "label": "Chrome 49.0.2623.87"
     },
     "system": {
       "name": "macosx",
       "icon": "macosx",
-      "label": "MacOS X 10.11.3",
+      "label": "MacOS X 10.11.3"
     }
   },
   "reputation": {
