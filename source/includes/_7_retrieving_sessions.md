@@ -90,6 +90,7 @@ Parameter  | Type   | Required | Description
 ---------- | ------ | -------- | ---------------------------------------------
 id         | string |     y    | a session identifier
 count      | int    |     y    | number of requests
+updated    | string |     y    | last Date & Time of activity, [ISO8601 format](https://en.wikipedia.org/wiki/ISO_8601)
 identity   | object |     y    | an [Identity Combination object](#identity-combination-object)
 address    | object |     y    | an [IP Address object](#ip-address-object)
 signature  | object |     n    | a [Signature object](#headers-signature-object)
