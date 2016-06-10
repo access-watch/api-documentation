@@ -88,11 +88,12 @@ sessions   | array  | a collection of [Session objects](#session-object) with ex
 
 Parameter  | Type   | Required | Description
 ---------- | ------ | -------- | ---------------------------------------------
-id         | string |     y    | a session identifier
+id         | string |     y    | an internal session identifier
 count      | int    |     y    | number of requests
 updated    | string |     y    | last Date & Time of activity, [ISO8601 format](https://en.wikipedia.org/wiki/ISO_8601)
 identity   | object |     y    | an [Identity Combination object](#identity-combination-object)
 address    | object |     y    | an [IP Address object](#ip-address-object)
 signature  | object |     n    | a [Signature object](#headers-signature-object)
 user_agent | object |     n    | a [User Agent object](#user-agent-object)
+speed      | object |     n    | a [Speed object](#speed-object)
 reputation | object |     y    | a [Reputation object](#reputation-object)

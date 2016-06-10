@@ -19,6 +19,16 @@ includes:
   - 7_retrieve_logs
   - 7_retrieving_sessions
   - B_01_objects
+  - B_02_ip_address
+  - B_03_user_agent
+  - B_04_headers_signature
+  - B_05_identity_combination
+  - B_05_request
+  - B_06_response
+  - B_07_reputation
+  - B_08_log
+  - B_09_session
+  - B_10_speed
   - errors
 
 search: true
