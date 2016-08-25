@@ -14,6 +14,7 @@ includes:
   - 2_user_agent_information
   - 3_headers_signature
   - 4_identity_information
+  - 4_session
   - 5_request_screening
   - 6_request_logging
   - 7_retrieve_logs
