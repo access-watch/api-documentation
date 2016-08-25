@@ -29,6 +29,7 @@ includes:
   - B_08_log
   - B_09_session
   - B_10_speed
+  - B_11_robot
   - errors
 
 search: true

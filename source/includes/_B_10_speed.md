@@ -10,7 +10,7 @@
 }
 ```
 
-### Properties of a Session object
+### Properties of a Speed object
 
 Parameter  | Type   | Required | Description
 ---------- | ------ | -------- | --------------------------------------------------------
