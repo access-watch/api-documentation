@@ -6,7 +6,6 @@ language_tabs:
   - shell: cURL
 
 toc_footers:
-  - <a href='https://access.watch/'>Sign Up for an API Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -63,7 +62,7 @@ curl "https://access.watch/api/1.0/hello" \
 
 Access Watch use API keys to authorize access to our API.
 
-You can get an API key directly on our [home page](https://access.watch/).
+To get an API key, simply send us an email at api@access.watch and we will come back to you.
 
 The API key is expected to be passed in each request with the `Api-Key` HTTP Header:
 
