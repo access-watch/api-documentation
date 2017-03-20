@@ -3,8 +3,8 @@
 > Request with raw headers:
 
 ```http
-POST /api/1.0/signature HTTP/1.1
-Host: access.watch
+POST /1.1/signature HTTP/1.1
+Host: api.access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 Content-Type: application/json
@@ -24,7 +24,7 @@ Content-Type: application/json
 ```
 
 ```shell
-curl "https://access.watch/api/1.0/signature" \
+curl "https://api.access.watch/1.1/signature" \
   -H "Api-Key: <Api_Key>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -47,7 +47,7 @@ Informations about the agent are extracted and you get back an identifier, user 
 
 ### API Request
 
-`POST https://access.watch/api/1.0/signature`
+`POST https://api.access.watch/1.1/signature`
 
 The expected Content-Type is "application/json".
 

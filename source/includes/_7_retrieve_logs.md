@@ -1,14 +1,14 @@
 ## Retrieving Logs
 
 ```http
-POST /api/1.0/logs?limit=1 HTTP/1.1
-Host: access.watch
+POST /1.1/logs?limit=1 HTTP/1.1
+Host: api.access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 ```
 
 ```shell
-curl "https://access.watch/api/1.0/logs?limit=1" \
+curl "https://api.access.watch/1.1/logs?limit=1" \
   -H "Api-Key: <Api_Key>"
 ```
 
@@ -49,6 +49,7 @@ curl "https://access.watch/api/1.0/logs?limit=1" \
         "id": "e90d9f20cce9c203f439129b0943a8bb",
         "value": "92.78.176.182",
         "hostname": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
+        "label": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
         "as_number": "3209",
         "network_name": "ARCOR-DSL-NET17",
         "country_code": "DE",

@@ -1,8 +1,8 @@
 ## User Agent
 
 ```http
-POST /api/1.0/user-agent HTTP/1.1
-Host: access.watch
+POST /1.1/user-agent HTTP/1.1
+Host: api.access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 Content-Type: application/json
@@ -13,7 +13,7 @@ Content-Type: application/json
 ```
 
 ```shell
-curl "https://access.watch/api/1.0/user-agent" \
+curl "https://api.access.watch/1.1/user-agent" \
   -H "Api-Key: <Api_Key>" \
   -H "Content-Type: application/json" \
   -d '{"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36"}'
@@ -45,7 +45,7 @@ This endpoint is used to get metadata about a User Agent string.
 
 ### API Request
 
-`POST https://access.watch/api/1.0/user-agent`
+`POST https://api.access.watch/1.1/user-agent`
 
 This endpoint accept a JSON object as input.
 

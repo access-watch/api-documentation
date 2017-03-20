@@ -1,11 +1,12 @@
 ---
-title: API Documentation
+title: Access Watch API Documentation
 
 language_tabs:
   - http: HTTP
   - shell: cURL
 
 toc_footers:
+  - <a href='https://access.watch/'>Access Watch</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -49,20 +50,20 @@ You can also use our API to get information about IP Addresses and User Agents.
 # Authentication
 
 ```http
-GET /api/1.0/hello HTTP/1.1
+GET /1.1/hello HTTP/1.1
 Host: access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 ```
 
 ```shell
-curl "https://access.watch/api/1.0/hello" \
+curl "https://api.access.watch/1.1/hello" \
   -H "Api-Key: <Api_Key>"
 ```
 
 Access Watch use API keys to authorize access to our API.
 
-To get an API key, simply send us an email at api@access.watch and we will come back to you.
+To get an API key, send us an email at api@access.watch and we will come back to you.
 
 The API key is expected to be passed in each request with the `Api-Key` HTTP Header:
 
@@ -70,6 +71,6 @@ The API key is expected to be passed in each request with the `Api-Key` HTTP Hea
 
 We also support the `api_key` parameter in the URL:
 
-`GET https://access.watch/api/1.0/hello?api_key=<API_KEY>`
+`GET https://api.access.watch/1.1/hello?api_key=<API_KEY>`
 
 # Endpoints

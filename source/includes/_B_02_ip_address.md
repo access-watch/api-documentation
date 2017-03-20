@@ -7,6 +7,7 @@
   "id": "e90d9f20cce9c203f439129b0943a8bb",
   "value": "92.78.176.182",
   "hostname": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
+  "label": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
   "as_number": "3209",
   "network_name": "ARCOR-DSL-NET17",
   "country_code": "DE",
@@ -23,6 +24,7 @@ Parameter    | Type   | Description
 id           | string | internal identifier
 value        | string | the ipv4 or ipv6 address
 hostname     | string | the reverse hostname for the address
+label        | string | a human label for the address (currently hostname or value)
 as_number    | string | the autonomous system number
 network_name | string | the network name
 country_code | string | the country code, two letter (ISO 3166-1 alpha-2)

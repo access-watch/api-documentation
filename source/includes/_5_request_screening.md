@@ -1,8 +1,8 @@
 ## Request Screening
 
 ```http
-POST /api/1.0/request HTTP/1.1
-Host: access.watch
+POST /1.1/request HTTP/1.1
+Host: api.access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 Content-Type: application/json
@@ -33,7 +33,7 @@ Content-Type: application/json
 ```
 
 ```shell
-curl "https://access.watch/api/1.0/request" \
+curl "https://api.access.watch/1.1/request" \
   -H "Api-Key: <Api_Key>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -114,7 +114,7 @@ It can also be used offline to enrich data sets.
 
 ### API Request
 
-`POST https://access.watch/api/1.0/request`
+`POST https://api.access.watch/1.1/request`
 
 This endpoint accept a JSON object as input.
 

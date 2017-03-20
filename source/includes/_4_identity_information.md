@@ -3,8 +3,8 @@
 > Request with IP Address and HTTP Headers:
 
 ```http
-POST /api/1.0/identity HTTP/1.1
-Host: access.watch
+POST /1.1/identity HTTP/1.1
+Host: api.access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 Content-Type: application/json
@@ -27,7 +27,7 @@ Content-Type: application/json
 ```
 
 ```shell
-curl "https://access.watch/api/1.0/identity" \
+curl "https://api.access.watch/1.1/identity" \
   -H "Api-Key: <Api_Key>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -82,6 +82,7 @@ curl "https://access.watch/api/1.0/identity" \
     "id": "e90d9f20cce9c203f439129b0943a8bb",
     "value": "92.78.176.182",
     "hostname": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
+    "label": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
     "as_number": "3209",
     "network_name": "ARCOR-DSL-NET17",
     "country_code": "DE",

@@ -1,8 +1,8 @@
 ## Request Logging
 
 ```http
-POST /api/1.0/log HTTP/1.1
-Host: access.watch
+POST /1.1/log HTTP/1.1
+Host: log.access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 Content-Type: application/json
@@ -37,7 +37,7 @@ Content-Type: application/json
 ```
 
 ```shell
-curl "https://access.watch/api/1.0/log" \
+curl "https://log.access.watch/1.1/log" \
   -H "Api-Key: <Api_Key>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -80,7 +80,7 @@ This endpoint is used to log and index an HTTP request.
 
 ### API Request
 
-`POST https://access.watch/api/1.0/log`
+`POST https://log.access.watch/1.1/log`
 
 This endpoint accept a JSON object as input.
 

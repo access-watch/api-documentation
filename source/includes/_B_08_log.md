@@ -37,6 +37,7 @@
     "id": "e90d9f20cce9c203f439129b0943a8bb",
     "value": "92.78.176.182",
     "hostname": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
+    "label": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
     "as_number": "3209",
     "network_name": "ARCOR-DSL-NET17",
     "country_code": "DE",

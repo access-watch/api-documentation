@@ -12,8 +12,8 @@
 
 ### Properties of an Headers Signature object
 
-Parameter  | Type   | Description
----------- | ------ | --------------------------------------------------------
-id         | string | internal identifier
-language   | string | a language code, parsed from the Accept-Language header
-country    | string | a country code, parsed from the Accept-Language header
+Parameter  | Type   | Required | Description
+---------- | ------ | -------- | -----------------------------------------------
+id         | string |    yes   | internal identifier
+language   | string |    no    | a language code, parsed from the Accept-Language header
+country    | string |    no    | a country code, parsed from the Accept-Language header

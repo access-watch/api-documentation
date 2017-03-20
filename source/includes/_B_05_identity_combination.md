@@ -4,14 +4,20 @@
 
 ```json
 {
-  "id": "7ecc3a36d6eae49e535f7a956778a166",
-  "type": "browser"
+  "id": "07051caab3d3d1e3a72bf9d635601080",
+  "type": "robot",
+  "name": "Google",
+  "label": "verified robot",
+  "description": "Agent operating from a verified IP address."
 }
 ```
 
 ### Properties of an Identity Combination object
 
-Parameter  | Type   | Description
----------- | ------ | --------------------------------------------------------
-id         | string | internal identifier
-type       | string | robot or browser, as detected by our platform
+Parameter   | Type   | Description
+----------- | ------ | ----------------------------------------------------------
+id          | string | internal unique identifier
+type        | string | robot or browser, as detected by our platform, can be null
+name        | string | name of the identity
+label       | string | label for the identity
+description | string | description of the identity

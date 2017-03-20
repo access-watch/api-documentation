@@ -14,6 +14,7 @@
     "id": "e90d9f20cce9c203f439129b0943a8bb",
     "value": "92.78.176.182",
     "hostname": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
+    "label": "dslb-092-078-176-182.092.078.pools.vodafone-ip.de",
     "as_number": "3209",
     "network_name": "ARCOR-DSL-NET17",
     "country_code": "DE",
@@ -57,5 +58,6 @@ identity   | object |    yes   | an [Identity Combination object](#identity-comb
 address    | object |    yes   | an [IP Address object](#ip-address-object)
 signature  | object |    no    | a [Signature object](#headers-signature-object)
 user_agent | object |    no    | a [User Agent object](#user-agent-object)
+robot      | object |    no    | a [Robot object](#robot-object)
 speed      | object |    no    | a [Speed object](#speed-object)
 reputation | object |    yes   | a [Reputation object](#reputation-object)

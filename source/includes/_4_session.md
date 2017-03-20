@@ -3,8 +3,8 @@
 > Request with IP Address and HTTP Headers:
 
 ```http
-POST /api/1.0/session HTTP/1.1
-Host: access.watch
+POST /1.1/session HTTP/1.1
+Host: api.access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 Content-Type: application/json
@@ -109,7 +109,7 @@ It's usually used in real time before processing the request.
 
 ### API Request
 
-`POST https://access.watch/api/1.0/session`
+`POST https://api.access.watch/1.1/session`
 
 This endpoint accept a JSON object as input.
 
