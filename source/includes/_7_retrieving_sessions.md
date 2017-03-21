@@ -69,7 +69,7 @@ This endpoint is used to retrieve sessions.
 
 ### API Request
 
-`GET https://access.watch/api/1.0/sessions`
+`GET https://api.access.watch/1.1/sessions`
 
 ### URL Parameters
 

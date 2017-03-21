@@ -89,7 +89,7 @@ This endpoint is used to retrieve logs.
 
 ### API Request
 
-`GET https://access.watch/api/1.0/logs`
+`GET https://api.access.watch/1.1/logs`
 
 ### URL Parameters
 

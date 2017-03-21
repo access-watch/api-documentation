@@ -51,7 +51,7 @@ You can also use our API to get information about IP Addresses and User Agents.
 
 ```http
 GET /1.1/hello HTTP/1.1
-Host: access.watch
+Host: api.access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 ```

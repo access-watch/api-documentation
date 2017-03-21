@@ -28,7 +28,7 @@ Content-Type: application/json
 ```
 
 ```shell
-curl "https://access.watch/api/1.0/session" \
+curl "https://api.access.watch/1.1/session" \
   -H "Api-Key: <Api_Key>" \
   -H "Content-Type: application/json" \
   -d '{

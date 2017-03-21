@@ -50,8 +50,8 @@ curl "https://api.access.watch/1.1/identity" \
 > Request with IP Address and User Agent:
 
 ```http
-POST /api/1.0/identity HTTP/1.1
-Host: access.watch
+POST /1.1/identity HTTP/1.1
+Host: api.access.watch
 Api-Key: <Api_Key>
 Accept: application/json
 Content-Type: application/json
@@ -63,7 +63,7 @@ Content-Type: application/json
 ```
 
 ```shell
-curl "https://access.watch/api/1.0/identity" \
+curl "https://api.access.watch/1.1/identity" \
   -H "Api-Key: <Api_Key>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -123,7 +123,7 @@ This endpoint is used to get information about a combination of either:
 
 ### API Request
 
-`POST https://access.watch/api/1.0/identity`
+`POST https://api.access.watch/1.1/identity`
 
 This endpoint accept a JSON object as input.
 
