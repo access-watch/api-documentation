@@ -116,11 +116,10 @@ We recommand to remove sensitive data like Cookie or Authorization headers.
 }
 ```
 
-Return an [Address object](#ip-address-object) with extra properties:
+Return a [Signature object](#headers-signature-object) with extra properties:
 
- * a [Address object](#ip-address-object)
- * a [Signature object](#headers-signature-object) (if headers were passed)
- * a [User Agent object](#user-agent-object) (if any)
+ * an [User Agent object](#user-agent-object) (if any)
+ * a [Reputation object](#reputation-object)
 
 ### Properties of the JSON response object
 
