@@ -66,10 +66,10 @@ curl "https://api.access.watch/1.1/address/92.78.176.182" \
 }
 ```
 
-Return an [Address object](#ip-address-object) with a [Reputation object](#reputation-object) as extra property:
+Return an [Address object](#ip-address-object) with extra properties:
 
- * a detailed list of the Address properties is available in [the Address object section](#ip-address-object).
- * a detailed list of the Reputation properties is available in [the Reputation object section](#reputation-object).
+ * an array of [Robot objects](#robot-object)
+ * a [Reputation object](#reputation-object)
 
 Check the examples on the side.
 
@@ -85,4 +85,5 @@ as_number    | string | the autonomous system number
 network_name | string | the network name
 country_code | string | the country code, two letter (ISO 3166-1 alpha-2)
 flags        | array  | see flags in the [the Address object section](#ip-address-object)
+robots       | array  | an array of [Robot objects](#robot-object)
 reputation   | object | a [Reputation object](#reputation-object)
