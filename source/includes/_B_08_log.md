@@ -73,14 +73,15 @@
 
 ### Properties of a Log object
 
-Parameter  | Type   | Description
+Parameter  | Type   | Required | Description
 ---------- | ------ | --------------------------------------------------------
-id         | string | internal identifier
-time       | string | Date & Time in [ISO8601 format](https://en.wikipedia.org/wiki/ISO_8601)
-request    | object | a [Request object](#request-object)
-response   | object | a [Response object](#response-object)
-identity   | object | an [Identity Combination object](#identity-combination-object)
-address    | object | an [IP Address object](#ip-address-object)
-signature  | object | a [Signature object](#headers-signature-object)
-user_agent | object | a [User Agent object](#user-agent-object)
-reputation | object | a [Reputation object](#reputation-object)
+id         | string |   yes    | internal identifier
+time       | string |   yes    | Date & Time in [ISO8601 format](https://en.wikipedia.org/wiki/ISO_8601)
+request    | object |   yes    | a [Request object](#request-object)
+response   | object |   yes    | a [Response object](#response-object)
+identity   | object |   yes    | an [Identity Combination object](#identity-combination-object)
+address    | object |   yes    | an [IP Address object](#ip-address-object)
+signature  | object |   yes    | a [Signature object](#headers-signature-object)
+user_agent | object |   no     | a [User Agent object](#user-agent-object)
+robot      | object |   no     | a [Robot object](#robot-object)
+reputation | object |   yes    | a [Reputation object](#reputation-object)
